@@ -1,13 +1,14 @@
-package ie.wit.donationx
+package ie.wit.donationx.fragments
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
+import ie.wit.donationx.R
 
 import ie.wit.donationx.databinding.FragmentDonateBinding
 import ie.wit.donationx.main.DonationXApp
@@ -28,6 +29,7 @@ class DonateFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         app = activity?.application as DonationXApp
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -62,6 +64,16 @@ class DonateFragment : Fragment() {
         totalDonated = app.donationsStore.findAll().sumOf { it.amount }
         fragBinding.progressBar.progress = totalDonated
         fragBinding.totalSoFar.text = getString(R.string.totalSoFar,totalDonated)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu_donate, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item,
+            requireView().findNavController()) || super.onOptionsItemSelected(item)
     }
 
     fun setButtonListener(layout: FragmentDonateBinding) {
