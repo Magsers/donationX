@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/DonationX/app/src/main/res/layout/activity_donate.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/DonationX/app/src/main/res/layout/activity_home.xml" value="0.18802083333333333" />
         <entry key="..\:/Android/DonationX/app/src/main/res/layout/activity_report.xml" value="0.18802083333333333" />
         <entry key="..\:/Android/DonationX/app/src/main/res/layout/card_donation.xml" value="0.18802083333333333" />
+        <entry key="..\:/Android/DonationX/app/src/main/res/layout/fragment_donate.xml" value="0.18802083333333333" />
+        <entry key="..\:/Android/DonationX/app/src/main/res/layout/fragment_report.xml" value="0.18802083333333333" />
         <entry key="..\:/Android/DonationX/app/src/main/res/menu/menu_donate.xml" value="0.18802083333333333" />
         <entry key="..\:/Android/DonationX/app/src/main/res/menu/menu_report.xml" value="0.18802083333333333" />
       </map>
